@@ -3,9 +3,12 @@ String startingScreen;
 int state;
 int[][] board;
 int rows, cols;
+int playerOne;
+int playerTwo;
 float cellWidth, cellHeight;
 float buttonX, buttonY, buttonWidth, buttonHeight;
 float buttonTop, buttonBottom, buttonLeftSide, buttonRightSide;
+
 
 void setup(){
   size(800, 800);
@@ -86,9 +89,9 @@ void displayboard(){
   for (int x=0; x<cols; x++) {
     for (int y=0; y<rows; y++) {
       if (board[x][y] == 1) {
-        fill(255);  //alive
+        fill(255);  
       } else {
-        fill(#0DD343); //dead
+        fill(#0DD343); 
       }
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
@@ -100,4 +103,8 @@ void initializeValues() {
   cellWidth = width/cols;
   cellHeight = height/rows;
   stroke(250);
+  
+  //starting point 
+  board[0][4] = 1;
+  board[1][4] = 2;
 }
