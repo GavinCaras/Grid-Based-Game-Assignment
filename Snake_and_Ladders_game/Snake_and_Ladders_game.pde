@@ -89,7 +89,8 @@ void displayboard(){
   for (int x=0; x<cols; x++) {
     for (int y=0; y<rows; y++) {
       if (board[x][y] == 1) {
-        fill(255);  
+        fill(0);
+        ellipse(x*cellWidth*2, y*cellHeight*2, cellWidth, cellHeight);  
       } else {
         fill(#0DD343); 
       }
@@ -104,7 +105,7 @@ void initializeValues() {
   cellHeight = height/rows;
   stroke(250);
   
-  //starting point 
+  //starting point
   board[0][4] = 1;
-  board[1][4] = 2;
+
 }
