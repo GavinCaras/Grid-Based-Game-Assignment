@@ -47,6 +47,7 @@ void draw() {
     
     displayButton();
   } else {
+    onePlayer();
     displayboard();
   }
 }
@@ -89,8 +90,6 @@ void displayboard(){
   for (int x=0; x<cols; x++) {
     for (int y=0; y<rows; y++) {
       if (board[x][y] == 1) {
-        fill(0);
-        ellipse(x*cellWidth*2, y*cellHeight*2, cellWidth, cellHeight);  
       } else {
         fill(#0DD343); 
       }
@@ -108,4 +107,10 @@ void initializeValues() {
   //starting point
   board[0][4] = 1;
 
+}
+
+
+void onePlayer() {
+  fill(0);
+  ellipse(X*cellWidth, Y*cellWidth, cellWidth/2, cellHeight/2);
 }
