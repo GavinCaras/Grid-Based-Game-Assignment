@@ -4,7 +4,6 @@ int state;
 int[][] board;
 int rows, cols;
 int playerOne;
-int playerTwo;
 float cellWidth, cellHeight;
 float buttonX, buttonY, buttonWidth, buttonHeight;
 float buttonTop, buttonBottom, buttonLeftSide, buttonRightSide;
@@ -47,8 +46,9 @@ void draw() {
     
     displayButton();
   } else {
-    onePlayer();
+    
     displayboard();
+    onePlayer();
   }
 }
 
@@ -65,7 +65,7 @@ void displayButton() {
   } else {
     fill(#07D840);
   }
-  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+  rect(buttonX, buttonY, buttonWidth, buttonHeight); 
 }
 
 boolean mouseInLocation1() {
@@ -93,6 +93,7 @@ void displayboard(){
       } else {
         fill(#0DD343); 
       }
+      strokeWeight(4);
       rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
   }
@@ -105,12 +106,13 @@ void initializeValues() {
   stroke(250);
   
   //starting point
+  fill(0);
   board[0][4] = 1;
 
 }
 
-
 void onePlayer() {
   fill(0);
   ellipse(X*cellWidth, Y*cellWidth, cellWidth/2, cellHeight/2);
+  stroke(4);
 }
