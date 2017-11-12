@@ -48,7 +48,7 @@ void draw() {
   } else {
     
     displayboard();
-    onePlayer();
+    //onePlayer();
   }
 }
 
@@ -107,12 +107,13 @@ void initializeValues() {
   
   //starting point
   fill(0);
+  stroke(0);
   board[0][4] = 1;
 
 }
 
-void onePlayer() {
-  fill(0);
-  ellipse(X*cellWidth, Y*cellWidth, cellWidth/2, cellHeight/2);
-  stroke(4);
-}
+//void onePlayer() {
+  //fill(0);
+  //ellipse(X*cellWidth, Y*cellWidth, cellWidth/2, cellHeight/2);
+  //stroke(4);
+//}
