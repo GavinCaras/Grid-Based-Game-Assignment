@@ -1,7 +1,6 @@
 //globals
 String r = "1, 2, 3, 4, 5, 6,";
 //String[] numbers = split(r, " ");
-int state;
 int[][] gameBoard;
 int rows, cols;
 int charX, charY;
@@ -10,6 +9,9 @@ float referenceNumber;
 
 void setup(){
   size(600, 600);
+  textFont(createFont("SansSerif",30));
+  textAlign(CENTER, CENTER);
+  noLoop();
   
   //the dimension of the board
   cols = 6;
@@ -20,21 +22,23 @@ void setup(){
 }
 
 
-void draw() {   
+void draw() {  
     displayboard();
 }
 
 
 void displayboard(){
+  int boardNum = int(random(1,30));
   for (int x=0; x<cols; x++) {
     for (int y=0; y<rows; y++) {      
-      if (gameBoard[x][y] == 1) {
+      if (gameBoard[x][y] == 1) {          
           fill(0);
-      } else if (gameBoard[x][y] == 0) {
+          text(boardNum++, x*90+45, y*90+45);
+    } 
+      else if (gameBoard[x][y] == 0) 
         fill(13, 211, 67); 
-      }
-      strokeWeight(3);
-      rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
+        strokeWeight(3);
+        rect(x*cellWidth, y*cellHeight, cellWidth, cellHeight);
     }
   }
 }
@@ -59,7 +63,7 @@ void initializeValues() {
 //}
 
 void getRandomNumber() {
-  float r = int(random(1,6));
+  float r = int(random(1,7));
   println(r);
 }
 
